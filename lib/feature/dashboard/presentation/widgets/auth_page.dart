@@ -110,8 +110,10 @@ class _AuthPageState extends State<AuthPage> {
     return Column(
       children: [
         CustomButton(
-          onPressed: (){
-            Navigation.replace(context, DashboardPageView());
+          onPressed: () {
+            if (authType == AuthType.signin) {
+              Navigation.replace(context, DashboardPageView());
+            }
           },
           buttonTextStyle: CropEasyTheme.getTextTheme(context).bodyTextLarge,
           buttonStyle: CustomButtonStyles.addTopBtnStyle,
